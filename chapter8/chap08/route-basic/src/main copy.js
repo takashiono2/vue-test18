@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
-//router.jsが有効になる
+import router from './router'
 
 Vue.config.productionTip = false
 
 new Vue({
-  //router.jsが有効になる
+  router,
   render: h => h(App)
 }).$mount('#app')

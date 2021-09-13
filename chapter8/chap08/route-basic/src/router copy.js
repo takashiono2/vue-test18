@@ -16,7 +16,7 @@ export default new Router({
     {
       path: '/about',
       name: 'about',
-      //非同期ロードを記載
+      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     }
   ]
 })
