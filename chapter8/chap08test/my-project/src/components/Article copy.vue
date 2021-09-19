@@ -13,16 +13,16 @@
     let limit = data[to.params.aid] ? data[to.params.aid] : new Date(2999, 12, 31)
     let current = new Date()
     if(limit && limit.getTime()>current.getTime()){
-      next()//そのまま継続表示
+      next()
     } else {
       window.alert('期間が過ぎています')
-      next(false)//ストップ
+      next(false)
     }
   }
 
   export default {
     name: 'Article',
-    beforeRouteEnter: timeGuard,//ナビゲーションガード紐付け
+    beforeRouteEnter: timeGuard,
     beforeRouteUpdate: timeGuard,
     props:{
       aid: String
