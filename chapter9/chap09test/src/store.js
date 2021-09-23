@@ -1,23 +1,15 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import MainModule from './main-store'
-import SubModule from './sub-store'
+import MainModule from './main-store'//MainModuleを使う 
+import SubModule from './sub-store'//SubModuleを使う
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  modules: {
-    main: MainModule,
-    sub : SubModule
-  },
+//モジュールを使う
+modules: {
+  main: MainModule,
+  sub: SubModule
+}
 
-  state: {
-    hoge: 0
-  },
-  mutations: {
-    hoge(state) {
-      state.hoge++;
-    }
-  }
 })
-

@@ -1,15 +1,17 @@
 export default {
+  namespaced: true,
   state: {
     updated: (new Date()).toTimeString(),
   },
   mutations: {
-    setUpdated(state) {
+    setUpdated(state){
       state.updated = (new Date()).toTimeString()
-    }
+    }//setUpdatedを実行
+    //(new Date()).toTimeString()を使う
   },
-  getters: {
-    localUpdated(state) {
-      return state.updated
-    },
-  }
+  // getters: {//updatedプロパティを取得するlocalUpdated
+  //   localUpdated(state) {
+  //     return state.updated
+  //   },
+  // }
 }

@@ -1,26 +1,30 @@
 <template>
   <div id="app">
-    メイン：{{mainUpdated}} <br />
-    サブ：{{subUpdated}} <br />
-    <input type="button" value="更新" v-on:click="setUpdated" />
+    メイン：{{ mainUpdated }} <br />
+    サブ：{{ subUpdated }} <br />
+    <input type="button" value="更新" v-on:click="onclick" />
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+// import { mapMutations } from 'vuex'
 export default {
   name: 'app',
-  computed: {
+  computed: mapState({
     mainUpdated() {
       return this.$store.state.main.updated;
     },
     subUpdated() {
       return this.$store.state.sub.updated;
     },
-  },
-  methods: {
-    setUpdated() {
-      this.$store.commit('setUpdated')
-    }
+    updated: state => state.main.updated
+  }),
+  methods: {    
+    onclick() {
+      this.setUpdated()
+    },
+  ...mapMutations('main', [ 'setUpdated' ])
   } 
 }
 </script>
